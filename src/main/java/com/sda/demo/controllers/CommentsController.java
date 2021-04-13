@@ -25,6 +25,8 @@ public class CommentsController {
 
     @PutMapping("/comment/{id}")
     public Comment updatedComment(@PathVariable Long id, @RequestBody Comment updatedComment) {
+        Optional<Comment> searchedCommentById = commentRepository.findById(id);
+        updatedComment.setArticle(searchedCommentById.get().getArticle());
         updatedComment.setId(id);
         commentRepository.save(updatedComment);
         return updatedComment;
@@ -33,6 +35,9 @@ public class CommentsController {
     public void deleteComment(@PathVariable Long id) {
         Optional<Comment> searchedCommentById = commentRepository.findById(id);
         commentRepository.delete(searchedCommentById.get());
+
+
+
 
     }
 }

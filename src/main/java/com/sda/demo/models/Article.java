@@ -14,8 +14,11 @@ public class Article {
     private String body;
     private String authorName;
 
-    @OneToMany
+    @OneToMany(mappedBy = "article")
     private List<Comment> commentList;
+
+    @ManyToMany(mappedBy = "articleList")
+    private List<Topic> topicList;
 
     public Article() {
 
@@ -27,6 +30,7 @@ public class Article {
         this.body = body;
         this.authorName = authorName;
         this.commentList = new ArrayList<>();
+        this.topicList = new ArrayList<>();
 
     }
 
@@ -65,5 +69,23 @@ public class Article {
     public boolean addComment(Comment commentToAdd) {
         return commentList.add(commentToAdd);
     }
+    public boolean addTopic(Topic topicToAdd) {
+        return topicList.add(topicToAdd);
+    }
 
+    public List<Comment> getCommentList() {
+        return commentList;
+    }
+
+    public void setCommentList(List<Comment> commentList) {
+        this.commentList = commentList;
+    }
+
+    public List<Topic> getTopicList() {
+        return topicList;
+    }
+
+    public void setTopicList(List<Topic> topicList) {
+        this.topicList = topicList;
+    }
 }
