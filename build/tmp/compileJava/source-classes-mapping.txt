@@ -1,0 +1,16 @@
+com/sda/demo/DevNewsApplication.java
+ com.sda.demo.DevNewsApplication
+com/sda/demo/controllers/TopicsController.java
+ com.sda.demo.controllers.TopicsController
+com/sda/demo/repository/ArticleRepository.java
+ com.sda.demo.repository.ArticleRepository
+com/sda/demo/repository/CommentRepository.java
+ com.sda.demo.repository.CommentRepository
+com/sda/demo/controllers/ArticlesController.java
+ com.sda.demo.controllers.ArticlesController
+com/sda/demo/controllers/CommentsController.java
+ com.sda.demo.controllers.CommentsController
+com/sda/demo/models/Comment.java
+ com.sda.demo.models.Comment
+com/sda/demo/models/Article.java
+ com.sda.demo.models.Article
