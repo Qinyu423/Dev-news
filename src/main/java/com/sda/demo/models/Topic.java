@@ -1,5 +1,7 @@
 package com.sda.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +15,9 @@ public class Topic {
     private String name;
 
     @ManyToMany
+    @JsonIgnore
     private List<Article> articleList;
+
 
     public Topic() {
 

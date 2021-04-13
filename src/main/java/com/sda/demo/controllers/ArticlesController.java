@@ -96,10 +96,10 @@ public class ArticlesController {
         Optional<Topic> searchedTopicById = topicRepository.findByName(topicToAdd.getName());
         Article foundArticle = searchedArticleById.get();
         Topic foundTopic = searchedTopicById.get();
-        foundArticle.addTopic(foundTopic);
-        topicToAdd.addArticle(foundArticle);
+        //foundArticle.addTopic(foundTopic);
+        foundTopic.addArticle(foundArticle);
         topicRepository.save(foundTopic);
-        articleRepository.save(foundArticle);
+        //articleRepository.save(foundArticle);
         return topicToAdd;
 
      }
